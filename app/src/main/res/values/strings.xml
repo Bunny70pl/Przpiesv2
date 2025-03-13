@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Przepisy</string>
+    <string-array name="kategorie">
+        <item>Ciastka</item>
+        <item>Ciasto</item>
+        <item>Napoje</item>
+    </string-array>
+</resources>
