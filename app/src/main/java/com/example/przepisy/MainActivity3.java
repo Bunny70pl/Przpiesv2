@@ -22,7 +22,8 @@ public class MainActivity3 extends AppCompatActivity {
     private TextView polubienia;
     private TextView opis;
     private Button buton;
-    private RatingBar ratingBar;
+    private RatingBar ratingBarwys;
+    private RatingBar ratingBar2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,14 +37,16 @@ public class MainActivity3 extends AppCompatActivity {
         imageView = findViewById(R.id.imageView2);
         opis.setText(przepisy2.get(0).getSkladniki());
         imageView.setImageResource(przepisy2.get(0).getIdObrazka());
-        ratingBar = findViewById(R.id.ratingBar);
+        ratingBarwys = findViewById(R.id.ratingBar);
+        ratingBar2 = findViewById(R.id.ratingbar2);
         buton = findViewById(R.id.button);
-        ratingBar.setRating( przepisy2.get(0).getPolubienia());
-        ratingBar.setOnRatingBarChangeListener(
+        ratingBarwys.setRating( przepisy2.get(0).getPolubienia());
+        ratingBar2.setOnRatingBarChangeListener(
                 new RatingBar.OnRatingBarChangeListener() {
                     @Override
                     public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                        //todo
+                        przepisy2.get(0).setPolubienia(v);
+                        ratingBarwys.setRating(przepisy2.get(0).getPolubienia());
                     }
                 }
         );
